@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     const data = await response.json();
 
-    document.getElementById('jobTitle').innerHTML = "<ここにジョブのタイトルを表示>";
+    document.getElementById('jobTitle').innerHTML = data.departure + "から" + data.destination + "まで乗客" + data.passenger + "人と貨物" + data.cargo + "kgを運ぶ。";
     document.getElementById('passengers').innerHTML = "<img src=\"/assets/person.svg\" alt=\"人のマーク\">：" + data.passenger + "人";
     document.getElementById('cargo').innerHTML = "<img src=\"/assets/cargo.svg\" alt=\"荷物のマーク\">：" + data.cargo.toLocaleString() + "kg";
     document.getElementById('jobmoney').innerHTML = "<img src=\"/assets/credit.svg\" alt=\"クレジットのマーク\">：" + data.gain_money.toLocaleString();
