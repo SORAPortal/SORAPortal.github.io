@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SORAPortal</title>
+	<script src="/scripts/auth.js"></script>
+	<script src="/scripts/header.js"></script>
+	<link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/ranking.css">
+</head>
+<body>
+	<header>
+		<h1>SORAPortal</h1>
+		<div id="user_prosession">
+			<div id="money"><img src="/assets/credit.svg" alt="お金のアイコン">-----</div>
+			<div id="xp"><img src="/assets/XP.svg" alt="XP">----</div>
+		</div>
+		<div id="clock">--:--z</div>
+		<div id="MyPage">
+			<a href="/mypage">マイページ</a>
+		</div>
+	</header>
+	<div class="container">
+		<nav>
+			<ul>
+				<li><a href="/">Dashboard</a></li>
+				<li><a href="/jobs">Jobs</a></li>
+				<!--<li><a href="">Aircraft</a></li>-->
+                <li class="active"><a href="/ranking">Ranking</a></li>
+			</ul>
+		</nav>		
+		<main>
+            <div class="ranking">
+                <div id="moneyRankingContainer">
+                    <h2>所持金額ランキング</h2>
+                    <div id="moneyRanking">
+                        <ul>
+                            <li class="rank">1</li>
+                            <li class="playerName">player1</li>
+                            <li class="playerMoney">12,000</li>
+                        </ul>
+                        <ul>
+                            <li class="rank">1</li>
+                            <li class="playerName">player1</li>
+                            <li class="playerMoney">12,000</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="XPRankingContainer">
+                    <h2>XPランキング</h2>
+                    <div id="XPRanking">
+                        <ul>
+                            <li class="rank">1</li>
+                            <li class="playerName">player1</li>
+                            <li class="playerXp">12,000</li>
+                        </ul>
+                        <ul>
+                            <li class="rank">1</li>
+                            <li class="playerName">player1</li>
+                            <li class="playerXp">12,000</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+		</main>	
+	</div>
+    <script src="/scripts/ranking.js"></script>
+</body>
+</html>

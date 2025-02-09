@@ -2,7 +2,7 @@ function updateClock () {
     let nowTime = new Date();
     let nowHour = nowTime.getUTCHours();
     let nowMin = nowTime.getUTCMinutes();
-    let clock = nowHour + ":" + nowMin + 'z';
+    let clock = ('00' + nowHour).slice(-2) + ":" + ('00' + nowMin).slice(-2) + 'z';
 
     document.getElementById('clock').innerHTML = clock;
 }
