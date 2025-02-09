@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SORAPortal</title>
+	<script src="/scripts/auth.js"></script>
+	<script src="/scripts/header.js"></script>
+	<link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/jobs.css">
+</head>
+<body>
+	<header>
+		<h1>SORAPortal</h1>
+		<div id="user_prosession">
+			<div id="money"><img src="/assets/credit.svg" alt="お金のアイコン">-----</div>
+			<div id="xp"><img src="/assets/XP.svg" alt="XP">----</div>
+		</div>
+		<div id="clock">--:--z</div>
+		<div id="MyPage">
+			<a href="/mypage">マイページ</a>
+		</div>
+	</header>
+	<div class="container">
+		<nav>
+			<ul>
+				<li><a href="/">Dashboard</a></li>
+				<li class="active"><a href="/jobs">Jobs</a></li>
+				<!--<li><a href="">Aircraft</a></li>-->
+			</ul>
+		</nav>		
+		<main>
+			<h2>ジョブ一覧</h2>
+            <div class="jobList" id="jobList">
+				<!--
+                <div class="jobItem">
+                    <div class="jobTitle">〇〇空港から□□空港まで△△を運ぶ</div>
+                    <div class="jobReward">
+                        <div class="Money">報酬金額：C 8,000</div>
+                        <div class="XP">獲得経験値：800XP</div>
+                    </div>
+                    <div class="jobDescription">仕事の説明</div>
+                    <div class="JobRequirements">
+                        <div class="passenger"><img src="/assets/person.svg" alt="人のマーク" style="height: 1.3em; margin-right:5px">120人</div>
+                        <div class="cargo"><img src="/assets/cargo.svg" alt="荷物のマーク" style="height:1.3em; margin-right:10px">8,000kg</div>
+                    </div>
+                    <div class="jobAction">
+                        <button class="jobAccept">ACCEPT</button>
+                        <button class="JobReject">REJECT</button>
+                    </div>
+                </div>
+				-->
+            </div>
+		</main>	
+	</div>
+	<script src="/scripts/jobs.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+document.addEventListener("DOMContentLoaded", async () => {
+    const jobButton = document.getElementById("jobStart");
+    const jobCancelButton = document.getElementById("jobCancel");
+    
+    const userId = sessionStorage.getItem('userId');
+    const jobId = "job_id";   // ジョブID（適宜取得するように変更）
+    const apiUrl = "/api/job"; // APIのエンドポイント（適宜変更）
+    let jobState = "not_started"; // 初期状態*
+
+    async function fetchJobState() {
+        try {
+            
+            // const response = await fetch(`${apiUrl}/state?user_id=${userId}&job_id=${jobId}`);
+            const response = await fetch("http://126.66.127.115:5288/job/" + sessionStorage.getItem('userId') + "?token=" +  sessionStorage.getItem('authToken'));
+            const jobs = await response.json();
+            for (let i = 0; i < length(jobs); i++) {
+                if (jobs[i].accepted === true) {
+                    
+                }
+            }
+            if (response.ok) {
+                jobState = "WIP!"; // サーバーからの状態を適用
+                updateButton();
+            }
+        } catch (error) {
+            console.error("ジョブ状態の取得に失敗", error);
+        }
+    }
+
+    function updateButton() {
+        if (jobState === "not_started") {
+            jobButton.textContent = "開始";
+            jobButton.onclick = () => sendJobRequest("start");
+        } else if (jobState === "in_progress") {
+            jobButton.textContent = "終了";
+            jobButton.onclick = () => sendJobRequest("finish");
+        } else if (jobState === "completed") {
+            jobButton.textContent = "報酬受取";
+            jobButton.onclick = () => sendJobRequest("claim");
+        }
+    }
+
+    async function sendJobRequest(action) {
+        const payload = {
+            user_id: userId,
+            job_id: jobId,
+        };
+
+        try {
+            const response = await fetch(`${apiUrl}/${action}`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                alert(`ジョブ${action === "start" ? "開始" : action === "finish" ? "終了" : "報酬受取"}成功！`);
+                if (action === "start") jobState = "in_progress";
+                else if (action === "finish") jobState = "completed";
+                else if (action === "claim") jobState = "not_started";
+                updateButton();
+            } else {
+                alert(`エラー: ${result.message}`);
+            }
+        } catch (error) {
+            console.error("APIエラー:", error);
+            alert("通信エラーが発生しました。");
+        }
+    }
+
+    jobCancelButton.addEventListener("click", () => sendJobRequest("cancel"));
+
+    await fetchJobState(); // 初回ロード時に状態を取得
+});

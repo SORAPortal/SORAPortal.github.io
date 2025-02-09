@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SORAPortal</title>
+	<script src="/scripts/auth.js"></script>
+	<script src="/scripts/header.js"></script>
+	<link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/mypage.css">
+</head>
+<body>
+	<header>
+		<h1>SORAPortal</h1>
+		<div id="user_prosession">
+			<div id="money"><img src="/assets/credit.svg" alt="お金のアイコン">-----</div>
+			<div id="xp"><img src="/assets/XP.svg" alt="XP">----</div>
+		</div>
+		<div id="clock">--:--z</div>
+		<div id="MyPage">
+			<a href="/mypage">マイページ</a>
+		</div>
+	</header>
+	<div class="container">
+		<nav>
+			<ul>
+				<li><a href="/">Dashboard</a></li>
+				<li><a href="/jobs">Jobs</a></li>
+				<!--<li><a href="">Aircraft</a></li>-->
+			</ul>
+		</nav>		
+		<main>
+			<h2>ユーザ情報変更</h2>
+            <form action="" class="form">
+                <div class="form">
+                    <label for="new_user_name">新しいユーザー名：</label>
+                    <input type="text" name="new_user_name" id="new_user_name">
+                </div>
+                <div class="form">
+                    <label for="current_password">今のパスワード：</label>
+                    <input type="password" name="current_password" id="current_password">
+                </div>
+                <div class="form">
+                    <label for="new_password">新しいパスワード：</label>
+                    <input type="password" name="new_password" id="new_password">
+                </div>
+                <div class="form">
+                    <label for="new_password_2">新しいパスワード（確認）：</label>
+                    <input type="password" name="new_password_2" id="new_password_2">
+                </div>
+                <button type="submit">submit</button>
+            </form>
+            <p id="errorMsg"></p>
+		</main>	
+        <script src="/scripts/mypage.js"></script>
+	</div>
+</body>
+</html>

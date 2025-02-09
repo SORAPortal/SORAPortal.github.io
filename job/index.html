@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SORAPortal</title>
+	<script src="/scripts/auth.js"></script>
+	<script src="/scripts/header.js"></script>
+	<link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/job.css">
+</head>
+<body>
+	<header>
+		<h1>SORAPortal</h1>
+		<div id="user_prosession">
+			<div id="money"><img src="/assets/credit.svg" alt="お金のアイコン">-----</div>
+			<div id="xp"><img src="/assets/XP.svg" alt="XP">----</div>
+		</div>
+		<div id="clock">--:--z</div>
+		<div id="MyPage">
+			<a href="/mypage">マイページ</a>
+		</div>
+	</header>
+	<div class="container">
+		<nav>
+			<ul>
+				<li><a href="/">Dashboard</a></li>
+				<li class="active"><a href="/jobs">Jobs</a></li>
+				<!--<li><a href="">Aircraft</a></li>-->
+			</ul>
+		</nav>		
+		<main>
+			<h2 class="jobTitle" id="jobTitle">羽田空港から福岡空港まで乗客120人と貨物8000kgを運ぶ。</h2>
+            <ul class="jobInfo">
+                <li id="passengers"><img src="/assets/person.svg" alt="人のマーク">：120人</li>
+                <li id="cargo"><img src="/assets/cargo.svg" alt="荷物のマーク">：8000kg</li>
+                <li id="jobmoney"><img src="/assets/credit.svg" alt="クレジットのマーク">：9,000</li>
+                <li id="jobxp"><img src="/assets/XP.svg" alt="XP">：900XP</li>
+            </ul>
+            <div class="actionButtons">
+                <button id="jobComplete">ジョブ完了</button>
+                <button id="jobCancel">キャンセル</button>
+            </div>
+		</main>	
+	</div>
+	<script src="/scripts/job.js"></script>
+</body>
+</html>

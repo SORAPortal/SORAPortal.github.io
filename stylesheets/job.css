@@ -1,0 +1,44 @@
+.jobTitle {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.jobInfo {
+    list-style: none;
+    padding: 0;
+}
+
+.jobInfo li {
+    font-size: 2em;
+    margin: 50px 0;
+    display: flex;
+    align-items: center;
+}
+
+.jobInfo li img {
+    height: 2em;
+}
+
+.actionButtons {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.actionButtons button {
+    background: #007bff;
+    color: white;
+    border: none;
+    /* padding: 15px 80px; */
+    width: 250px;
+    height: 60px;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.actionButtons button:last-child {
+    background: #dc3545;
+}
