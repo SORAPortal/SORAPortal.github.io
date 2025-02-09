@@ -27,15 +27,15 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        const hashPassword = async (password) => {
-            const encoder = new TextEncoder();
-            const data = encoder.encode(password);
-            const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-            return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, "0")).join("");
-        };
+        // const hashPassword = async (password) => {
+        //     const encoder = new TextEncoder();
+        //     const data = encoder.encode(password);
+        //     const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+        //     return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, "0")).join("");
+        // };
 
-        const currentHashedPassword = await hashPassword(currentPassword);
-        const newHashedPassword = newPassword ? await hashPassword(newPassword) : null;
+        const currentHashedPassword = sha256(currentPassword);
+        const newHashedPassword = newPassword ? sha256(newPassword) : null;
 
         const requestBody = {
             new_user_name: newUserName || null,

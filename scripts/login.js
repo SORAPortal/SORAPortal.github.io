@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = document.getElementById("password").value;
 
         try {
-            const hashedPassword = await sha256(password);
+            const hashedPassword = sha256(password);
 
             const response = await fetch(`http://126.66.127.115:5288/login?username=${encodeURIComponent(username)}&hashedpassword=${hashedPassword}`);
 
@@ -26,10 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    async function sha256(str) {
-        const encoder = new TextEncoder();
-        const data = encoder.encode(str);
-        const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-        return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, "0")).join("");
-    }
+    // async function sha256(str) {
+    //     const encoder = new TextEncoder();
+    //     const data = encoder.encode(str);
+    //     const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+    //     return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, "0")).join("");
+    // }
 });
