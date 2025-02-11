@@ -1,12 +1,12 @@
 function generateJobHTML(jobData) {
     return `
         <div class="jobItem" data-job-id="${jobData.job_id}">
-            <div class="jobTitle">${jobData.departure}から${jobData.destination}まで乗客${jobData.passenger}人と貨物${jobData.cargo}kgを運ぶ。</div>
+            <div class="jobTitle">${jobData.departure}から${jobData.destination}まで乗客${jobData.passenger}人と貨物${jobData.cargo.toLocaleString()}kgを運ぶ。</div>
             <div class="jobReward">
                 <div class="Money">報酬金額：<img src="/assets/credit.svg" alt="クレジット" style="height: 1.3em"> ${jobData.gain_money.toLocaleString()}</div>
                 <div class="XP">獲得経験値：${jobData.gain_xp.toLocaleString()}XP</div>
             </div>
-            <div class="jobDescription">${jobData.passenger}人の乗客と、${jobData.cargo}kgの貨物を、${jobData.departure}から${jobData.destination}に運んでください。<br>報酬は${jobData.gain_money.toLocaleString()}クレジットと、${jobData.gain_xp.toLocaleString()}XPです。</div>
+            <div class="jobDescription">${jobData.passenger}人の乗客と、${jobData.cargo.toLocaleString()}kgの貨物を、${jobData.departure}から${jobData.destination}に運んでください。<br>報酬は${jobData.gain_money.toLocaleString()}クレジットと、${jobData.gain_xp.toLocaleString()}XPです。</div>
             <div class="JobRequirements">
                 <div class="passenger">
                     <img src="/assets/person.svg" alt="人のマーク" style="height: 1.3em; margin-right:5px">

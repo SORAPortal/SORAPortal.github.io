@@ -33,3 +33,18 @@ li::marker {
     padding-block: 20px;
     font-size: 1.5em;
 }
+
+.rank {
+    width: 30px;
+    text-align: left;
+}
+
+.playerName {
+    width: 120px;
+    text-align: center;
+}
+
+.playerMoney, .playerXP {
+    width: 80px;
+    text-align: center;
+}

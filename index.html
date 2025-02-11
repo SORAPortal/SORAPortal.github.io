@@ -6,7 +6,8 @@
 	<title>SORAPortal</title>
 	<script src="/scripts/auth.js"></script>
 	<script src="/scripts/header.js"></script>
-	<link rel="stylesheet" href="stylesheets/main.css">
+	<link rel="stylesheet" href="/stylesheets/main.css">
+	<link rel="stylesheet" href="/stylesheets/dashboard.css">
 </head>
 <body>
 	<header>
@@ -28,10 +29,34 @@
 				<!--<li><a href="">Aircraft</a></li>-->
 				<li><a href="/ranking">Ranking</a></li>
 			</ul>
-		</nav>		
+		</nav>
 		<main>
-			<h2>WORK IN PROGRESS</h2>
+			<div id="quickJobs">
+				<h2>クイックジョブ</h2>
+				<div id="quickJobList">
+					<h3>work in progress</h3>
+				</div>
+			</div>
+			<div id="missions">
+				<h2>デイリーミッション</h2>
+				<div id="missionList">
+					<!-- <div class="missionItem">
+						<div class="missionInfo">
+							<h3 class="missionName">ミッションのタイトル</h3>
+							<div class="missionProgress">
+								<progress max="100" value="70"></progress>
+								<label>70/100</label>
+							</div>
+						</div>
+						<div class="missionRewards">
+							<div class="rewardMoney">C 1,000</div>
+							<div class="rewardXP"></div>
+						</div>
+					</div> -->
+				</div>
+			</div>
 		</main>	
 	</div>
+	<script src="/scripts/mission.js"></script>
 </body>
 </html>
